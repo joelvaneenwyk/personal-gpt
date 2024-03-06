@@ -22,8 +22,8 @@ __pycache__/
 /.python-version
 
 # IDE
-.idea/
-.vscode/
+# .idea/
+# .vscode/
 /.run/
 .fleet/
 
