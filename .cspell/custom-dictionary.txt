@@ -1,4 +1,6 @@
 # Custom Dictionary Words
+buildwithfern
+CICD
 endlocal
 errorlevel
 PYTHONPATH

@@ -19,3 +19,12 @@ open http://127.0.0.1:8001/
 
 The above is not working, or it is too slow, so **you want to run it on GPU(s)**?
 Please check the more detailed [installation guide](/installation).
+
+```cmd
+proto run python -- -m venv .venv
+call .venv\Scripts\activate.bat
+python -m pip install --upgrade pip poetry
+poetry install --with "ui,local"
+python scripts\setup
+poetry run python -m private_gpt
+```
