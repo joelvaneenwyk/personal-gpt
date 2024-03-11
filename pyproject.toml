@@ -15,11 +15,11 @@ pypdf = "^3.16.2"
 llama-index = { extras = ["local_models"], version = "0.9.3" }
 watchdog = "^3.0.0"
 qdrant-client = "^1.6.9"
-chromadb = {version = "^0.4.13", optional = true}
-asyncpg = {version = "^0.29.0", optional = true}
-pgvector = {version = "^0.2.5", optional = true}
-psycopg2-binary = {version = "^2.9.9", optional = true}
-sqlalchemy = {version = "^2.0.27", optional = true}
+chromadb = { version = "^0.4.13", optional = true }
+asyncpg = { version = "^0.29.0", optional = true }
+pgvector = { version = "^0.2.5", optional = true }
+psycopg2-binary = { version = "^2.9.9", optional = true }
+sqlalchemy = { version = "^2.0.27", optional = true }
 
 [tool.poetry.group.dev.dependencies]
 black = "^22"
@@ -79,19 +79,19 @@ target-version = 'py311'
 [tool.ruff.lint]
 # See all rules at https://beta.ruff.rs/docs/rules/
 select = [
-    "E", # pycodestyle
-    "W", # pycodestyle
-    "F", # Pyflakes
-    "B", # flake8-bugbear
-    "C4", # flake8-comprehensions
-    "D", # pydocstyle
-    "I", # isort
+    "E",   # pycodestyle
+    "W",   # pycodestyle
+    "F",   # Pyflakes
+    "B",   # flake8-bugbear
+    "C4",  # flake8-comprehensions
+    "D",   # pydocstyle
+    "I",   # isort
     "SIM", # flake8-simplify
     "TCH", # flake8-type-checking
     "TID", # flake8-tidy-imports
-    "Q", # flake8-quotes
-    "UP", # pyupgrade
-    "PT", # flake8-pytest-style
+    "Q",   # flake8-quotes
+    "UP",  # pyupgrade
+    "PT",  # flake8-pytest-style
     "RUF", # Ruff-specific rules
 ]
 
