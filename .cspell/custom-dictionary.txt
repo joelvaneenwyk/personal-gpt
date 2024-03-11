@@ -19,5 +19,8 @@ mypy
 oleksis
 orcid
 Orgaz
+ptrace
+PTRACE
 PYTHONPATH
+seccomp
 setlocal
