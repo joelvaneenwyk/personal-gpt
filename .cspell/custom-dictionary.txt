@@ -1,7 +1,12 @@
 # Custom Dictionary Words
 buildwithfern
+cffinit
 CICD
 endlocal
 errorlevel
+Gallego
+Iván
+orcid
+Orgaz
 PYTHONPATH
 setlocal
