@@ -1,0 +1,43 @@
+{
+    "files.associations": {
+        "setup": "python"
+    },
+    "terminal.integrated.autoReplies": {
+      "Terminate batch job (Y/N)": "Y\r"
+    },
+    "terminal.integrated.confirmOnExit": "never",
+    "terminal.integrated.defaultProfile.windows": "Mycoshiro",
+    "terminal.integrated.enableImages": true,
+    "terminal.integrated.profiles.windows": {
+      "Git Bash": {
+        "source": "Git Bash"
+      },
+      "Mycoshiro": {
+        "args": [],
+        "env": {
+          "PATH": "${workspaceFolder};${workspaceFolder}\\Source\\.bin;${workspaceFolder}\\Microsoft\\Source\\.bin;${env:USERPROFILE}\\.proto\\bin;${env:PATH};${env:windir}\\System32;${env:windir}",
+          "PATHEXT": ".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC",
+          "PROMPT": "$P$G"
+        },
+        "icon": "terminal-cmd",
+        "path": [
+          "${env:windir}\\Sysnative\\cmd.exe",
+          "${env:windir}\\System32\\cmd.exe"
+        ]
+      },
+      "PowerShell": {
+        "env": {
+          "PATH": "${userHome}\\.proto\\bin;${workspaceFolder};${workspaceFolder}\\bin;${workspaceFolder}\\Source\\.bin;${workspaceFolder}\\Microsoft\\Source\\.bin;${env:PATH};${env:windir}\\System32;${env:windir}",
+          "PATHEXT": ".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC",
+          "PROMPT": "$P$G"
+        },
+        "icon": "terminal-powershell",
+        "source": "PowerShell"
+      }
+    },
+    "terminal.integrated.shellIntegration.history": 1000,
+    "terminal.integrated.shellIntegration.suggestEnabled": true,
+    "terminal.integrated.smoothScrolling": true,
+    "terminal.integrated.stickyScroll.enabled": true,
+    "terminal.integrated.tabStopWidth": 4
+}

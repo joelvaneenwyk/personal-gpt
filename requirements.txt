@@ -1,0 +1,13 @@
+#
+# privateGPT - Python Development Requirements
+#
+
+fastapi[all] >=0.103.1
+huggingface_hub
+injector >=0.21.0
+poetry >=1.8.2
+psycopg2-binary >=2.9.9
+pydantic
+transformers
+watchdog >=3.0.0
+ruff

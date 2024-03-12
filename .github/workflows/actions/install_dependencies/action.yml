@@ -27,4 +27,3 @@ runs:
     - name: Install Dependencies
       run: poetry install --with ui --no-root
       shell: bash
-

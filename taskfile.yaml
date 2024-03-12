@@ -1,0 +1,9 @@
+# https://taskfile.dev
+
+version: "3"
+
+tasks:
+  default:
+    cmds:
+      - proto use && devcontainer build --workspace-folder . .devcontainer/devcontainer.json
+    silent: true

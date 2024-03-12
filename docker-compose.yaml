@@ -11,4 +11,3 @@ services:
       PORT: 8080
       PGPT_PROFILES: docker
       PGPT_MODE: local
-
