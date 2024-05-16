@@ -24,8 +24,7 @@ FROM base as dependencies
 WORKDIR /home/worker/app
 COPY pyproject.toml poetry.lock ./
 
-RUN poetry install --with local
-RUN poetry install --with ui
+RUN poetry install --extras "ui embeddings-huggingface llms-llama-cpp vector-stores-qdrant"
 
 FROM base as app
 
@@ -34,7 +33,8 @@ ENV PORT=8080
 EXPOSE 8080
 
 # Prepare a non-root user
-RUN adduser --system worker
+RUN adduser --group worker
+RUN adduser --system --ingroup worker worker
 WORKDIR /home/worker/app
 
 RUN mkdir local_data; chown worker local_data

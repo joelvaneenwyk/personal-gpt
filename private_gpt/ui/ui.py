@@ -1,4 +1,5 @@
-"""This file should be imported only and only if you want to run the UI locally."""
+"""This file should be imported if and only if you want to run the UI locally."""
+
 import itertools
 import logging
 import time
@@ -10,7 +11,7 @@ import gradio as gr  # type: ignore
 from fastapi import FastAPI
 from gradio.themes.utils.colors import slate  # type: ignore
 from injector import inject, singleton
-from llama_index.llms import ChatMessage, ChatResponse, MessageRole
+from llama_index.core.llms import ChatMessage, ChatResponse, MessageRole
 from pydantic import BaseModel
 
 from private_gpt.constants import PROJECT_ROOT_PATH
@@ -44,8 +45,8 @@ class Source(BaseModel):
         frozen = True
 
     @staticmethod
-    def curate_sources(sources: list[Chunk]) -> set["Source"]:
-        curated_sources = set()
+    def curate_sources(sources: list[Chunk]) -> list["Source"]:
+        curated_sources = []
 
         for chunk in sources:
             doc_metadata = chunk.document.doc_metadata
@@ -54,7 +55,10 @@ class Source(BaseModel):
             page_label = doc_metadata.get("page_label", "-") if doc_metadata else "-"
 
             source = Source(file=file_name, page=page_label, text=chunk.text)
-            curated_sources.add(source)
+            curated_sources.append(source)
+            curated_sources = list(
+                dict.fromkeys(curated_sources).keys()
+            )  # Unique sources only
 
         return curated_sources
 
@@ -96,10 +100,15 @@ class PrivateGptUi:
             if completion_gen.sources:
                 full_response += SOURCES_SEPARATOR
                 cur_sources = Source.curate_sources(completion_gen.sources)
-                sources_text = "\n\n\n".join(
-                    f"{index}. {source.file} (page {source.page})"
-                    for index, source in enumerate(cur_sources, start=1)
-                )
+                sources_text = "\n\n\n"
+                used_files = set()
+                for index, source in enumerate(cur_sources, start=1):
+                    if f"{source.file}-{source.page}" not in used_files:
+                        sources_text = (
+                            sources_text
+                            + f"{index}. {source.file} (page {source.page}) \n\n"
+                        )
+                        used_files.add(f"{source.file}-{source.page}")
                 full_response += sources_text
             yield full_response
 
@@ -409,11 +418,54 @@ class PrivateGptUi:
                         inputs=system_prompt_input,
                     )
 
+                    def get_model_label() -> str | None:
+                        """Get model label from llm mode setting YAML.
+
+                        Raises:
+                            ValueError: If an invalid 'llm_mode' is encountered.
+
+                        Returns:
+                            str: The corresponding model label.
+                        """
+                        # Get model label from llm mode setting YAML
+                        # Labels: local, openai, openailike, sagemaker, mock, ollama
+                        config_settings = settings()
+                        if config_settings is None:
+                            raise ValueError("Settings are not configured.")
+
+                        # Get llm_mode from settings
+                        llm_mode = config_settings.llm.mode
+
+                        # Mapping of 'llm_mode' to corresponding model labels
+                        model_mapping = {
+                            "llamacpp": config_settings.llamacpp.llm_hf_model_file,
+                            "openai": config_settings.openai.model,
+                            "openailike": config_settings.openai.model,
+                            "sagemaker": config_settings.sagemaker.llm_endpoint_name,
+                            "mock": llm_mode,
+                            "ollama": config_settings.ollama.llm_model,
+                        }
+
+                        if llm_mode not in model_mapping:
+                            print(f"Invalid 'llm mode': {llm_mode}")
+                            return None
+
+                        return model_mapping[llm_mode]
+
                 with gr.Column(scale=7, elem_id="col"):
+                    # Determine the model label based on the value of PGPT_PROFILES
+                    model_label = get_model_label()
+                    if model_label is not None:
+                        label_text = (
+                            f"LLM: {settings().llm.mode} | Model: {model_label}"
+                        )
+                    else:
+                        label_text = f"LLM: {settings().llm.mode}"
+
                     _ = gr.ChatInterface(
                         self._chat,
                         chatbot=gr.Chatbot(
-                            label=f"LLM: {settings().llm.mode}",
+                            label=label_text,
                             show_copy_button=True,
                             elem_id="chatbot",
                             render=False,
