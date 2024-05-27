@@ -26,9 +26,6 @@ __pycache__/
 /coverage.xml
 /htmlcov/
 
-# pyenv
-/.python-version
-
 # IDE
 # .idea/
 # .vscode/
