@@ -1,6 +1,14 @@
-.venv
-.env
-venv
+#
+# personal-gpt | Ignore List
+#
+
+pyproject*.toml
+
+dist/
+
+.venv/
+.env/
+venv/
 
 settings-me.yaml
 
