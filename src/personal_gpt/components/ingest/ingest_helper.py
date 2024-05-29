@@ -2,8 +2,9 @@ import logging
 from pathlib import Path
 
 from llama_index.core import Document
-from llama_index.core.readers import JSONReader, StringIterableReader
-from llama_index.core.readers.file.base import DEFAULT_FILE_READER_CLS
+from llama_index.core.readers import StringIterableReader
+from llama_index.legacy.readers import JSONReader
+from llama_index.legacy.readers.file.base import DEFAULT_FILE_READER_CLS
 
 logger = logging.getLogger(__name__)
 
