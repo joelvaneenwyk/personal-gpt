@@ -11,7 +11,6 @@ from typing import Annotated
 import pytest
 from fastapi import Depends
 from fastapi.testclient import TestClient
-
 from personal_gpt.server.utils.auth import (
     NOT_AUTHENTICATED,
     _simple_authentication,

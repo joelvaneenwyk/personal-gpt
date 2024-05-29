@@ -1,5 +1,4 @@
 from fastapi.testclient import TestClient
-
 from personal_gpt.open_ai.openai_models import OpenAICompletion, OpenAIMessage
 from personal_gpt.server.chat.chat_router import ChatBody
 

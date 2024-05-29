@@ -2,7 +2,6 @@ import io
 import os
 
 import pytest
-
 from personal_gpt.settings.yaml import load_yaml_with_envvars
 
 

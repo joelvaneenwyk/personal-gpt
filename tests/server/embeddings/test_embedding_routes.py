@@ -1,5 +1,4 @@
 from fastapi.testclient import TestClient
-
 from personal_gpt.server.embeddings.embeddings_router import (
     EmbeddingsBody,
     EmbeddingsResponse,

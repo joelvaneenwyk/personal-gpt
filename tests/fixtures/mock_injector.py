@@ -4,7 +4,6 @@ from unittest.mock import MagicMock
 
 import pytest
 from injector import Provider, ScopeDecorator, singleton
-
 from personal_gpt.di import create_application_injector
 from personal_gpt.settings.settings import Settings, unsafe_settings
 from personal_gpt.settings.settings_loader import merge_settings
