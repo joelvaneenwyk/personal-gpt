@@ -80,7 +80,7 @@ class LLMComponent:
             case "mock":
                 self.llm = MockLLM()
             case "ollama":
-                from llama_index.core.llms import Ollama
+                from llama_index.legacy.llms import Ollama
 
                 ollama_settings = settings.ollama
                 self.llm = Ollama(

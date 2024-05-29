@@ -2,13 +2,13 @@ from dataclasses import dataclass
 
 from injector import inject, singleton
 from llama_index.core import ServiceContext, StorageContext, VectorStoreIndex
-from llama_index.chat_engine import ContextChatEngine, SimpleChatEngine
-from llama_index.chat_engine.types import (
+from llama_index.core.chat_engine import ContextChatEngine, SimpleChatEngine
+from llama_index.core.chat_engine.types import (
     BaseChatEngine,
 )
-from llama_index.indices.postprocessor import MetadataReplacementPostProcessor
+from llama_index.core.indices.postprocessor import MetadataReplacementPostProcessor
 from llama_index.core.llms import ChatMessage, MessageRole
-from llama_index.types import TokenGen
+from llama_index.core.types import TokenGen
 from pydantic import BaseModel
 
 from personal_gpt.components.embedding.embedding_component import EmbeddingComponent

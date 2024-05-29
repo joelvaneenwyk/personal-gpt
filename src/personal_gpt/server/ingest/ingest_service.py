@@ -8,7 +8,7 @@ from llama_index.core import (
     ServiceContext,
     StorageContext,
 )
-from llama_index.node_parser import SentenceWindowNodeParser
+from llama_index.core.node_parser import SentenceWindowNodeParser
 
 from personal_gpt.components.embedding.embedding_component import EmbeddingComponent
 from personal_gpt.components.ingest.ingest_component import get_ingestion_component

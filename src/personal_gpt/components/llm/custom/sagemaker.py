@@ -29,7 +29,7 @@ from llama_index.core.llms.chatml_utils import (
 if TYPE_CHECKING:
     from collections.abc import Sequence
 
-    from llama_index.callbacks import CallbackManager
+    from llama_index.core.callbacks import CallbackManager
     from llama_index.core.llms import (
         ChatMessage,
         ChatResponse,
