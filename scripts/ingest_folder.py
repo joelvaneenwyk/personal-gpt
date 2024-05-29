@@ -4,9 +4,9 @@ import argparse
 import logging
 from pathlib import Path
 
-from private_gpt.di import global_injector
-from private_gpt.server.ingest.ingest_service import IngestService
-from private_gpt.server.ingest.ingest_watcher import IngestWatcher
+from personal_gpt.di import global_injector
+from personal_gpt.server.ingest.ingest_service import IngestService
+from personal_gpt.server.ingest.ingest_watcher import IngestWatcher
 
 logger = logging.getLogger(__name__)
 

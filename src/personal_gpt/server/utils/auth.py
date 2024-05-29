@@ -24,7 +24,7 @@ from typing import Annotated
 
 from fastapi import Depends, Header, HTTPException
 
-from private_gpt.settings.settings import settings
+from personal_gpt.settings.settings import settings
 
 # 401 signify that the request requires authentication.
 # 403 signify that the authenticated user is not authorized to perform the operation.

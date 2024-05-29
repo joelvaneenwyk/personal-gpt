@@ -35,7 +35,7 @@ Install the dependencies:
 poetry install --with ui
 ```
 
-Verify everything is working by running `make run` (or `poetry run python -m private_gpt`) and navigate to
+Verify everything is working by running `make run` (or `poetry run python -m personal_gpt`) and navigate to
 http://localhost:8001. You should see a [Gradio UI](https://gradio.app/) **configured with a mock LLM** that will
 echo back the input. Below we'll see how to configure a real LLM.
 
@@ -87,7 +87,7 @@ is used.
 
 Currently, not all the parameters of `llama.cpp` and `llama-cpp-python` are available at PrivateGPT's `settings.yaml` file.
 In case you need to customize parameters such as the number of layers loaded into the GPU, you might change
-these at the `llm_component.py` file under the `private_gpt/components/llm/llm_component.py`.
+these at the `llm_component.py` file under the `personal_gpt/components/llm/llm_component.py`.
 
 ##### Available LLM config options
 

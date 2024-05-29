@@ -8,8 +8,8 @@ from typing import Any
 
 from pydantic.v1.utils import deep_update, unique_list
 
-from private_gpt.constants import PROJECT_ROOT_PATH
-from private_gpt.settings.yaml import load_yaml_with_envvars
+from personal_gpt.constants import PROJECT_ROOT_PATH
+from personal_gpt.settings.yaml import load_yaml_with_envvars
 
 logger = logging.getLogger(__name__)
 

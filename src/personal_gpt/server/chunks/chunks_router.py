@@ -3,9 +3,9 @@ from typing import Literal
 from fastapi import APIRouter, Depends, Request
 from pydantic import BaseModel, Field
 
-from private_gpt.open_ai.extensions.context_filter import ContextFilter
-from private_gpt.server.chunks.chunks_service import Chunk, ChunksService
-from private_gpt.server.utils.auth import authenticated
+from personal_gpt.open_ai.extensions.context_filter import ContextFilter
+from personal_gpt.server.chunks.chunks_service import Chunk, ChunksService
+from personal_gpt.server.utils.auth import authenticated
 
 chunks_router = APIRouter(prefix="/v1", dependencies=[Depends(authenticated)])
 

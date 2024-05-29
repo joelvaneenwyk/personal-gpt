@@ -2,8 +2,8 @@
 
 import llama_index
 
-from private_gpt.di import global_injector
-from private_gpt.launcher import create_app
+from personal_gpt.di import global_injector
+from personal_gpt.launcher import create_app
 
 # Add LlamaIndex simple observability
 llama_index.set_global_handler("simple")

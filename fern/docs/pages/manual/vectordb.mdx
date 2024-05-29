@@ -27,7 +27,7 @@ The available configuration options are:
 | prefix       | If set, add `prefix` to the REST URL path. Example: `service/v1` will result in `http://localhost:6333/service/v1/{qdrant-endpoint}` for REST API.|
 | timeout      | Timeout for REST and gRPC API requests. Default: 5.0 seconds for REST and unlimited for gRPC |
 | host         | Host name of Qdrant service. If url and host are not set, defaults to 'localhost'.|
-| path         | Persistence path for QdrantLocal. Eg. `local_data/private_gpt/qdrant`|
+| path         | Persistence path for QdrantLocal. Eg. `local_data/personal_gpt/qdrant`|
 | force_disable_check_same_thread         | Force disable check_same_thread for QdrantLocal sqlite connection, defaults to True.|
 
 By default Qdrant tries to connect to an instance of Qdrant server at `http://localhost:3000`.
@@ -36,7 +36,7 @@ To obtain a local setup (disk-based database) without running a Qdrant server, c
 
 ```yaml
 qdrant:
-  path: local_data/private_gpt/qdrant
+  path: local_data/personal_gpt/qdrant
 ```
 
 ### Chroma configuration
@@ -68,7 +68,7 @@ The available configuration options are:
 | **user**      | The username for database access. Default is `postgres` |
 | **password**  | The password for database access. (Required)            |
 | **embed_dim** | The dimensionality of the embedding model (Required)    |
-| **schema_name** | The database schema to use. Default is `private_gpt`       |
+| **schema_name** | The database schema to use. Default is `personal_gpt`       |
 | **table_name** | The database table to use. Default is `embeddings`    |
 
 For example:
@@ -80,6 +80,6 @@ pgvector:
   user: postgres
   password: <PASSWORD>
   embed_dim: 384 # 384 is for BAAI/bge-small-en-v1.5
-  schema_name: private_gpt
+  schema_name: personal_gpt
   table_name: embeddings
 ```

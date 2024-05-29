@@ -3,7 +3,7 @@ import os
 
 import pytest
 
-from private_gpt.settings.yaml import load_yaml_with_envvars
+from personal_gpt.settings.yaml import load_yaml_with_envvars
 
 
 def test_environment_variables_are_loaded() -> None:

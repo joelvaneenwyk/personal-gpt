@@ -18,7 +18,7 @@ PGPT_PROFILES=local make run
 or
 
 ```bash
-PGPT_PROFILES=local poetry run python -m private_gpt
+PGPT_PROFILES=local poetry run python -m personal_gpt
 ```
 
 When the server is started it will print a log *Application startup complete*.
@@ -49,7 +49,7 @@ And run PrivateGPT loading that profile you just created:
 
 or
 
-`PGPT_PROFILES=openai poetry run python -m private_gpt`
+`PGPT_PROFILES=openai poetry run python -m personal_gpt`
 
 When the server is started it will print a log *Application startup complete*.
 Navigate to http://localhost:8001 to use the Gradio UI or to http://localhost:8001/docs (API section) to try the API.
@@ -98,7 +98,7 @@ And run PrivateGPT loading that profile you just created:
 
 or
 
-`PGPT_PROFILES=sagemaker poetry run python -m private_gpt`
+`PGPT_PROFILES=sagemaker poetry run python -m personal_gpt`
 
 When the server is started it will print a log *Application startup complete*.
 Navigate to http://localhost:8001 to use the Gradio UI or to http://localhost:8001/docs (API section) to try the API.
@@ -128,7 +128,7 @@ And run PrivateGPT loading that profile you just created:
 
 or
 
-`PGPT_PROFILES=ollama poetry run python -m private_gpt`
+`PGPT_PROFILES=ollama poetry run python -m personal_gpt`
 
 When the server is started it will print a log *Application startup complete*.
 Navigate to http://localhost:8001 to use the Gradio UI or to http://localhost:8001/docs (API section) to try the API.

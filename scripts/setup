@@ -5,8 +5,8 @@ import os
 from huggingface_hub import hf_hub_download, snapshot_download
 from transformers import AutoTokenizer
 
-from private_gpt.paths import models_cache_path, models_path
-from private_gpt.settings.settings import settings
+from personal_gpt.paths import models_cache_path, models_path
+from personal_gpt.settings.settings import settings
 
 resume_download = True
 if __name__ == "__main__":

@@ -1,6 +1,6 @@
 import pytest
 
-from private_gpt.components.vector_store.vector_store_component import (
+from personal_gpt.components.vector_store.vector_store_component import (
     VectorStoreComponent,
 )
 from tests.fixtures.mock_injector import MockInjector

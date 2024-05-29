@@ -1,7 +1,7 @@
 """Tests to validate that the simple authentication mechanism is working.
 
 NOTE: We are not testing the switch based on the config in
-      `private_gpt.server.utils.auth`. This is not done because of the way the code
+      `personal_gpt.server.utils.auth`. This is not done because of the way the code
       is currently architecture (it is hard to patch the `settings` and the app while
       the tests are directly importing them).
 """
@@ -12,12 +12,12 @@ import pytest
 from fastapi import Depends
 from fastapi.testclient import TestClient
 
-from private_gpt.server.utils.auth import (
+from personal_gpt.server.utils.auth import (
     NOT_AUTHENTICATED,
     _simple_authentication,
     authenticated,
 )
-from private_gpt.settings.settings import settings
+from personal_gpt.settings.settings import settings
 
 
 def _copy_simple_authenticated(

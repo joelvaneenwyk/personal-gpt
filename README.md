@@ -106,13 +106,13 @@ RAG implementation. Some key architectural decisions are:
 
 Main building blocks:
 
-- APIs are defined in `private_gpt:server:<api>`. Each package contains an
+- APIs are defined in `personal_gpt:server:<api>`. Each package contains an
   `<api>_router.py` (FastAPI layer) and an `<api>_service.py` (the
   service implementation). Each *Service* uses LlamaIndex base abstractions instead
   of specific implementations,
   decoupling the actual implementation from its usage.
 - Components are placed in
-  `private_gpt:components:<component>`. Each *Component* is in charge of providing
+  `personal_gpt:components:<component>`. Each *Component* is in charge of providing
   actual implementations to the base abstractions used in the Services - for example
   `LLMComponent` is in charge of providing an actual implementation of an `LLM`
   (for example `LlamaCPP` or `OpenAI`).

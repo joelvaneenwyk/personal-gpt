@@ -2,8 +2,8 @@
 
 import uvicorn
 
-from private_gpt.main import app
-from private_gpt.settings.settings import settings
+from personal_gpt.main import app
+from personal_gpt.settings.settings import settings
 
 # Set log_config=None to do not use the uvicorn logging configuration, and
 # use ours instead. For reference, see below:

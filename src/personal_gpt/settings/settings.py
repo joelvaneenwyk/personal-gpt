@@ -2,7 +2,7 @@ from typing import Literal
 
 from pydantic import BaseModel, Field
 
-from private_gpt.settings.settings_loader import load_active_settings
+from personal_gpt.settings.settings_loader import load_active_settings
 
 
 class CorsSettings(BaseModel):
@@ -324,6 +324,6 @@ def settings() -> Settings:
 
     For regular components use dependency injection instead.
     """
-    from private_gpt.di import global_injector
+    from personal_gpt.di import global_injector
 
     return global_injector.get(Settings)

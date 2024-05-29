@@ -3,7 +3,7 @@ from typing import Literal
 from injector import inject, singleton
 from pydantic import BaseModel, Field
 
-from private_gpt.components.embedding.embedding_component import EmbeddingComponent
+from personal_gpt.components.embedding.embedding_component import EmbeddingComponent
 
 
 class Embedding(BaseModel):

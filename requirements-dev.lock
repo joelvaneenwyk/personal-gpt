@@ -210,6 +210,7 @@ llama-index-llms-openai==0.1.21
     # via llama-index-multi-modal-llms-openai
     # via llama-index-program-openai
     # via llama-index-question-gen-openai
+    # via personal-gpt
 llama-index-multi-modal-llms-openai==0.1.6
     # via llama-index
 llama-index-program-openai==0.1.6

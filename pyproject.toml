@@ -24,13 +24,23 @@ dependencies = [
     "huggingface-hub>=0.23.2",
     "pydantic>=2.7.2",
     "transformers>=4.41.1",
+    "llama-index-llms-openai>=0.1.21",
 ]
 readme = "README.md"
 requires-python = ">=3.11,<3.12"
 
+[project.scripts]
+pgpt = "personal_gpt:main"
+
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/personal_gpt"]
 
 [tool.rye]
 managed = true
@@ -40,17 +50,10 @@ dev-dependencies = [
     "pre-commit>=3.7.1",
     "pytest>=8.2.1",
     "pytest-cov>=5.0.0",
-    "ruff>=0.4.5",
+    "ruff>=0.4.6",
     "pytest-asyncio>=0.23.7",
     "types-pyyaml>=6.0.12.20240311",
 ]
-
-[tool.hatch.metadata]
-allow-direct-references = true
-
-[tool.hatch.build.targets.wheel]
-packages = ["src/personal_gpt"]
-
 # Packages configs
 
 ## coverage

@@ -9,20 +9,20 @@ test:
 	PYTHONPATH=. rye run pytest tests
 
 test-coverage:
-	PYTHONPATH=. rye run pytest tests --cov private_gpt --cov-report term --cov-report=html --cov-report xml --junit-xml=tests-results.xml
+	PYTHONPATH=. rye run pytest tests --cov personal_gpt --cov-report term --cov-report=html --cov-report xml --junit-xml=tests-results.xml
 
 black:
 	rye run black . --check
 
 ruff:
-	rye run ruff check private_gpt tests
+	rye run ruff check personal_gpt tests
 
 format:
 	rye run black .
-	rye run ruff check private_gpt tests --fix
+	rye run ruff check personal_gpt tests --fix
 
 mypy:
-	rye run mypy private_gpt
+	rye run mypy personal_gpt
 
 check:
 	make format
@@ -33,20 +33,20 @@ check:
 ########################################################################################################################
 
 run:
-	rye run python -m private_gpt
+	rye run python -m personal_gpt
 
 dev-windows:
-	(set PGPT_PROFILES=local & rye run python -m uvicorn private_gpt.main:app --reload --port 8001)
+	(set PGPT_PROFILES=local & rye run python -m uvicorn personal_gpt.main:app --reload --port 8001)
 
 dev:
-	PYTHONUNBUFFERED=1 PGPT_PROFILES=local rye run python -m uvicorn private_gpt.main:app --reload --port 8001
+	PYTHONUNBUFFERED=1 PGPT_PROFILES=local rye run python -m uvicorn personal_gpt.main:app --reload --port 8001
 
 ########################################################################################################################
 # Misc
 ########################################################################################################################
 
 api-docs:
-	PGPT_PROFILES=mock rye run python scripts/extract_openapi.py private_gpt.main:app --out fern/openapi/openapi.json
+	PGPT_PROFILES=mock rye run python scripts/extract_openapi.py personal_gpt.main:app --out fern/openapi/openapi.json
 
 ingest:
 	@rye run python scripts/ingest_folder.py $(call args)

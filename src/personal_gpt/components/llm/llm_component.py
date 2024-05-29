@@ -6,9 +6,9 @@ from llama_index.llms import MockLLM
 from llama_index.llms.base import LLM
 from transformers import AutoTokenizer  # type: ignore
 
-from private_gpt.components.llm.prompt_helper import get_prompt_style
-from private_gpt.paths import models_cache_path, models_path
-from private_gpt.settings.settings import Settings
+from personal_gpt.components.llm.prompt_helper import get_prompt_style
+from personal_gpt.paths import models_cache_path, models_path
+from personal_gpt.settings.settings import Settings
 
 logger = logging.getLogger(__name__)
 
@@ -50,7 +50,7 @@ class LLMComponent:
                 )
 
             case "sagemaker":
-                from private_gpt.components.llm.custom.sagemaker import SagemakerLLM
+                from personal_gpt.components.llm.custom.sagemaker import SagemakerLLM
 
                 self.llm = SagemakerLLM(
                     endpoint_name=settings.sagemaker.llm_endpoint_name,

@@ -17,7 +17,7 @@ server:
     secret: "Basic c2VjcmV0OmtleQ=="
 
 data:
-  local_data_folder: local_data/private_gpt
+  local_data_folder: local_data/personal_gpt
 
 ui:
   enabled: true
@@ -33,7 +33,6 @@ ui:
     the answer, just state the answer is not in the context provided.
   delete_file_button_enabled: true
   delete_all_files_button_enabled: true
-
 
 llm:
   mode: local
@@ -51,7 +50,7 @@ vectorstore:
   database: qdrant
 
 qdrant:
-  path: local_data/private_gpt/qdrant
+  path: local_data/personal_gpt/qdrant
 
 pgvector:
   host: localhost
@@ -60,7 +59,7 @@ pgvector:
   user: postgres
   password: postgres
   embed_dim: 384 # 384 is for BAAI/bge-small-en-v1.5
-  schema_name: private_gpt
+  schema_name: personal_gpt
   table_name: embeddings
 
 local:

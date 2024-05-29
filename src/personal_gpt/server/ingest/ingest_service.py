@@ -10,15 +10,15 @@ from llama_index import (
 )
 from llama_index.node_parser import SentenceWindowNodeParser
 
-from private_gpt.components.embedding.embedding_component import EmbeddingComponent
-from private_gpt.components.ingest.ingest_component import get_ingestion_component
-from private_gpt.components.llm.llm_component import LLMComponent
-from private_gpt.components.node_store.node_store_component import NodeStoreComponent
-from private_gpt.components.vector_store.vector_store_component import (
+from personal_gpt.components.embedding.embedding_component import EmbeddingComponent
+from personal_gpt.components.ingest.ingest_component import get_ingestion_component
+from personal_gpt.components.llm.llm_component import LLMComponent
+from personal_gpt.components.node_store.node_store_component import NodeStoreComponent
+from personal_gpt.components.vector_store.vector_store_component import (
     VectorStoreComponent,
 )
-from private_gpt.server.ingest.model import IngestedDoc
-from private_gpt.settings.settings import settings
+from personal_gpt.server.ingest.model import IngestedDoc
+from personal_gpt.settings.settings import settings
 
 logger = logging.getLogger(__name__)
 

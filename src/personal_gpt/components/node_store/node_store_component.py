@@ -5,7 +5,7 @@ from llama_index.storage.docstore import BaseDocumentStore, SimpleDocumentStore
 from llama_index.storage.index_store import SimpleIndexStore
 from llama_index.storage.index_store.types import BaseIndexStore
 
-from private_gpt.paths import local_data_path
+from personal_gpt.paths import local_data_path
 
 logger = logging.getLogger(__name__)
 

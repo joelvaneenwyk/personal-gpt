@@ -3,9 +3,9 @@ from typing import Literal
 from fastapi import APIRouter, Depends, HTTPException, Request, UploadFile
 from pydantic import BaseModel, Field
 
-from private_gpt.server.ingest.ingest_service import IngestService
-from private_gpt.server.ingest.model import IngestedDoc
-from private_gpt.server.utils.auth import authenticated
+from personal_gpt.server.ingest.ingest_service import IngestService
+from personal_gpt.server.ingest.model import IngestedDoc
+from personal_gpt.server.utils.auth import authenticated
 
 ingest_router = APIRouter(prefix="/v1", dependencies=[Depends(authenticated)])
 

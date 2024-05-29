@@ -19,9 +19,9 @@ from llama_index.data_structs import IndexDict
 from llama_index.indices.base import BaseIndex
 from llama_index.ingestion import run_transformations
 
-from private_gpt.components.ingest.ingest_helper import IngestionHelper
-from private_gpt.paths import local_data_path
-from private_gpt.settings.settings import Settings
+from personal_gpt.components.ingest.ingest_helper import IngestionHelper
+from personal_gpt.paths import local_data_path
+from personal_gpt.settings.settings import Settings
 
 logger = logging.getLogger(__name__)
 

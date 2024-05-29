@@ -14,19 +14,19 @@ from injector import inject, singleton
 from llama_index.llms import ChatMessage, ChatResponse, MessageRole
 from pydantic import BaseModel
 
-from private_gpt.constants import PROJECT_ROOT_PATH
-from private_gpt.di import global_injector
-from private_gpt.open_ai.extensions.context_filter import ContextFilter
-from private_gpt.server.chat.chat_service import ChatService, CompletionGen
-from private_gpt.server.chunks.chunks_service import Chunk, ChunksService
-from private_gpt.server.ingest.ingest_service import IngestService
-from private_gpt.settings.settings import settings
-from private_gpt.ui.images import logo_svg
+from personal_gpt.constants import PROJECT_ROOT_PATH
+from personal_gpt.di import global_injector
+from personal_gpt.open_ai.extensions.context_filter import ContextFilter
+from personal_gpt.server.chat.chat_service import ChatService, CompletionGen
+from personal_gpt.server.chunks.chunks_service import Chunk, ChunksService
+from personal_gpt.server.ingest.ingest_service import IngestService
+from personal_gpt.settings.settings import settings
+from personal_gpt.ui.images import logo_svg
 
 logger = logging.getLogger(__name__)
 
 THIS_DIRECTORY_RELATIVE = Path(__file__).parent.relative_to(PROJECT_ROOT_PATH)
-# Should be "private_gpt/ui/avatar-bot.ico"
+# Should be "personal_gpt/ui/avatar-bot.ico"
 AVATAR_BOT = THIS_DIRECTORY_RELATIVE / "avatar-bot.ico"
 
 UI_TAB_TITLE = "My Private GPT"

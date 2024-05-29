@@ -29,12 +29,12 @@ WORKDIR /home/worker/app
 RUN mkdir local_data; chown worker local_data
 RUN mkdir models; chown worker models
 COPY --chown=worker --from=dependencies /home/worker/app/.venv/ .venv
-COPY --chown=worker private_gpt/ private_gpt
+COPY --chown=worker personal_gpt/ personal_gpt
 COPY --chown=worker fern/ fern
 COPY --chown=worker *.yaml *.md ./
 COPY --chown=worker scripts/ scripts
 
-ENV PYTHONPATH="$PYTHONPATH:/private_gpt/"
+ENV PYTHONPATH="$PYTHONPATH:/personal_gpt/"
 
 USER worker
-ENTRYPOINT python -m private_gpt
+ENTRYPOINT python -m personal_gpt

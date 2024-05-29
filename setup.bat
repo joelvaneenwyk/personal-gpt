@@ -18,5 +18,5 @@ setlocal EnableDelayedExpansion
     call python -m pip install --upgrade pip poetry
     call poetry install --with "ui,local"
     call python "%~dp0scripts\setup"
-    call poetry run python -m private_gpt
+    call poetry run python -m personal_gpt
 endlocal & exit /b %errorlevel%

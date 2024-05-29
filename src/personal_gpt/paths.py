@@ -1,7 +1,7 @@
 from pathlib import Path
 
-from private_gpt.constants import PROJECT_ROOT_PATH
-from private_gpt.settings.settings import settings
+from personal_gpt.constants import PROJECT_ROOT_PATH
+from personal_gpt.settings.settings import settings
 
 
 def _absolute_or_from_project_root(path: str) -> Path:

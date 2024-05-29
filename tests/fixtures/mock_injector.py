@@ -5,10 +5,10 @@ from unittest.mock import MagicMock
 import pytest
 from injector import Provider, ScopeDecorator, singleton
 
-from private_gpt.di import create_application_injector
-from private_gpt.settings.settings import Settings, unsafe_settings
-from private_gpt.settings.settings_loader import merge_settings
-from private_gpt.utils.typing import T
+from personal_gpt.di import create_application_injector
+from personal_gpt.settings.settings import Settings, unsafe_settings
+from personal_gpt.settings.settings_loader import merge_settings
+from personal_gpt.utils.typing import T
 
 
 class MockInjector:

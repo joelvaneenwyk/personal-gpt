@@ -4,8 +4,8 @@ from injector import inject, singleton
 from llama_index import MockEmbedding
 from llama_index.embeddings.base import BaseEmbedding
 
-from private_gpt.paths import models_cache_path
-from private_gpt.settings.settings import Settings
+from personal_gpt.paths import models_cache_path
+from personal_gpt.settings.settings import Settings
 
 logger = logging.getLogger(__name__)
 
@@ -28,7 +28,7 @@ class EmbeddingComponent:
                 )
             case "sagemaker":
 
-                from private_gpt.components.embedding.custom.sagemaker import (
+                from personal_gpt.components.embedding.custom.sagemaker import (
                     SagemakerEmbedding,
                 )
 
