@@ -5,7 +5,7 @@ goto:$Main
 setlocal EnableDelayedExpansion
     cd /d "%~dp0"
     git add .
-    call :Add "%~1"
+    rye add "%~1"
     rye sync
     if errorlevel 1 goto:$AddError
     goto:$AddDone
