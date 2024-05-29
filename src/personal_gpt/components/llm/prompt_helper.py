@@ -4,9 +4,9 @@ from collections.abc import Sequence
 from typing import Any, Literal
 
 from llama_index.core.llms import ChatMessage, MessageRole
-from llama_index.legacy.core.llms.llama_utils import (
-    completion_to_prompt,
+from llama_index.core.llms.llama_utils import (
     messages_to_prompt,
+    completion_to_prompt,
 )
 
 logger = logging.getLogger(__name__)
