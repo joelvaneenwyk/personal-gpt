@@ -8,7 +8,7 @@ import threading
 from pathlib import Path
 from typing import Any
 
-from llama_index import (
+from llama_index.core import (
     Document,
     ServiceContext,
     StorageContext,

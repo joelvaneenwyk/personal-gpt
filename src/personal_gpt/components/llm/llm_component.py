@@ -1,10 +1,9 @@
 import logging
 
 from injector import inject, singleton
-from llama_index import set_global_tokenizer
-from llama_index.llms import MockLLM
-from llama_index.llms.base import LLM
-from transformers import AutoTokenizer  # type: ignore
+from llama_index.core import set_global_tokenizer
+from llama_index.core.llms import MockLLM, LLM
+from transformers import AutoTokenizer
 
 from personal_gpt.components.llm.prompt_helper import get_prompt_style
 from personal_gpt.paths import models_cache_path, models_path
@@ -31,7 +30,7 @@ class LLMComponent:
         logger.info("Initializing the LLM in mode=%s", llm_mode)
         match settings.llm.mode:
             case "local":
-                from llama_index.llms import LlamaCPP
+                from llama_index.core.llms import LlamaCPP
 
                 prompt_style = get_prompt_style(settings.local.prompt_style)
 
@@ -58,7 +57,7 @@ class LLMComponent:
                     context_window=settings.llm.context_window,
                 )
             case "openai":
-                from llama_index.llms import OpenAI
+                from llama_index.llms.openai import OpenAI
 
                 openai_settings = settings.openai
                 self.llm = OpenAI(
@@ -67,7 +66,7 @@ class LLMComponent:
                     model=openai_settings.model,
                 )
             case "openailike":
-                from llama_index.llms import OpenAILike
+                from llama_index.llms.openai_like import OpenAILike
 
                 openai_settings = settings.openai
                 self.llm = OpenAILike(
@@ -81,7 +80,7 @@ class LLMComponent:
             case "mock":
                 self.llm = MockLLM()
             case "ollama":
-                from llama_index.llms import Ollama
+                from llama_index.core.llms import Ollama
 
                 ollama_settings = settings.ollama
                 self.llm = Ollama(

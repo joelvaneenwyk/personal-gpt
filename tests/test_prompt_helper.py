@@ -1,5 +1,5 @@
 import pytest
-from llama_index.llms import ChatMessage, MessageRole
+from llama_index.core.llms import ChatMessage, MessageRole
 from personal_gpt.components.llm.prompt_helper import (
     ChatMLPromptStyle,
     DefaultPromptStyle,

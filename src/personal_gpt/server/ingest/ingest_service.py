@@ -4,7 +4,7 @@ from pathlib import Path
 from typing import AnyStr, BinaryIO
 
 from injector import inject, singleton
-from llama_index import (
+from llama_index.core import (
     ServiceContext,
     StorageContext,
 )

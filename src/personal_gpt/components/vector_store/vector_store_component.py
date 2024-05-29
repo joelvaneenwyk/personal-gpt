@@ -2,7 +2,7 @@ import logging
 import typing
 
 from injector import inject, singleton
-from llama_index import VectorStoreIndex
+from llama_index.core import VectorStoreIndex
 from llama_index.indices.vector_store import VectorIndexRetriever
 from llama_index.vector_stores.types import VectorStore
 
