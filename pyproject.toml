@@ -8,24 +8,6 @@ authors = [
 ]
 dependencies = [
     "fastapi[all]>=0.111.0",
-    "version",
-    "boto3",
-    "injector>=0.21.0",
-    "pyyaml",
-    "python-multipart",
-    "pypdf",
-    "llama-index",
-    "watchdog>=4.0.1",
-    "qdrant-client",
-    "chromadb",
-    "asyncpg",
-    "pgvector",
-    "psycopg2-binary>=2.9.9",
-    "sqlalchemy",
-    "huggingface_hub>=0.23.1",
-    "pydantic>=2.7.1",
-    "transformers>=4.41.1",
-    "ruff>=0.4.5",
 ]
 readme = "README.md"
 requires-python = ">=3.11,<3.12"
