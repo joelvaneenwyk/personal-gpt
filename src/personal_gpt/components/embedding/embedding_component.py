@@ -1,7 +1,7 @@
 import logging
 
 from injector import inject, singleton
-from llama_index.core.embeddings import MockEmbedding, BaseEmbedding
+from llama_index.core.embeddings import BaseEmbedding, MockEmbedding
 
 from personal_gpt.paths import models_cache_path
 from personal_gpt.settings.settings import Settings

@@ -7,6 +7,10 @@ import logging
 from typing import TYPE_CHECKING, Any
 
 import boto3  # type: ignore
+from llama_index.core.base.llms.generic_utils import (
+    completion_response_to_chat_response,
+    stream_completion_response_to_chat_response,
+)
 from llama_index.core.bridge.pydantic import Field
 from llama_index.core.llms import (
     CompletionResponse,
@@ -17,12 +21,10 @@ from llama_index.core.llms.callbacks import (
     llm_chat_callback,
     llm_completion_callback,
 )
-from llama_index.core.base.llms.generic_utils import (
-    completion_response_to_chat_response,
-    stream_completion_response_to_chat_response,
-)
 from llama_index.core.llms.chatml_utils import (
     completion_to_prompt as generic_completion_to_prompt,
+)
+from llama_index.core.llms.chatml_utils import (
     messages_to_prompt as generic_messages_to_prompt,
 )
 

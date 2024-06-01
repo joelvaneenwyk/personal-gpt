@@ -2,7 +2,7 @@ import logging
 
 from injector import inject, singleton
 from llama_index.core import set_global_tokenizer
-from llama_index.core.llms import MockLLM, LLM
+from llama_index.core.llms import LLM, MockLLM
 from transformers import AutoTokenizer
 
 from personal_gpt.components.llm.prompt_helper import get_prompt_style
